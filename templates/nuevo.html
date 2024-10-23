@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Producto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="titulo">
+            <h1>Gestión de productos</h1>
+        </div>
+        <div class="info">
+            <p>SEGUNDO PARCIAL</p>
+            <p>Nombre: Jose Andres Choque Gomez</p>
+            <p>Carnet: 9083759</p>
+        </div>
+    </header>
+    <h2>Nuevo Producto</h2>
+    <form action="{{ url_for('nuevo_producto') }}" method="POST">
+        Nombre: <input type="text" name="nombre" required><br>
+        Cantidad: <input type="number" name="cantidad" required><br>
+        Precio: <input type="text" name="precio" required><br>
+        Fecha de vencimiento: <input type="date" name="fecha_vencimiento" required><br>
+        Categoría: 
+        <select name="categoria" required>
+            <option value="Bebidas">Bebidas</option>
+            <option value="Snacks">Snacks</option>
+            <option value="Lácteos">Lácteos</option>
+        </select><br><br>
+        <input type="submit" value="Guardar">
+    </form>
+</body>
+</html>
